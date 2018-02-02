@@ -1,0 +1,16 @@
+{
+  "name": "EvCaluculator",
+  "version": "1.0.0",
+  "manifest_version": 2,
+
+  "description": "Caluculator for all pokemon trainer",
+
+  "browser_action": {
+      "default_icon": "monsterBall.png",
+      "default_title": "EvCaluculater",
+      "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ]
+}
