@@ -1,25 +1,3 @@
-// documentから取得してくる
-let pokerus;
-let callFellow;
-let evItem;
-let counterStop;
-let inputEv;
-let resultTag;
-let resultText;
-let saveBtn;
-let inputCalc;
-
-window.onload = () => {
-  pokerus = document.getElementById("pokerus");
-  callFellow = document.getElementById("call-fellow");
-  evItem = document.getElementById("Ev-Item");
-  counterStop = document.getElementById("counter-stop");
-  inputEv = document.getElementById("Ev-Value");
-  resultTag = document.getElementsByTagName("h2")[0];
-  resultText = document.getElementById("result");
-  saveBtn = document.getElementById("save-button");
-  inputCalc = document.getElementById("caluculate");
-}
 
 // if this variable`s value is "2", a pokemon is infected.
 let pokerusValue = 1;
@@ -50,6 +28,9 @@ const setPokerus = () => {
 }
 
 const setOption = (optionName,value) => {
+  let pokerus = document.getElementById("pokerus");
+  let callFellow = document.getElementById("call-fellow");
+  let evItem = document.getElementById("Ev-Item");
   switch(optionName) {
     case "pokerus":
       if (pokerus.checked) {
@@ -74,11 +55,14 @@ const setOption = (optionName,value) => {
 
 // Counter Stop　が押されていたらInputはoffに
 const syncBtn = (bool) => {
+  let counterStop = document.getElementById("counter-stop");
+  let inputEv = document.getElementById("Ev-Value");
   isCounterStop = counterStop.checked;
   inputEv.disabled = bool;
 }
 
 const parseValue = (value) => {
+  let counterStop = document.getElementById("counter-stop");
   if (value === "" && !counterStop.checked) {
     alert("値を指定してください");
     location.reload();
@@ -94,6 +78,9 @@ const parseValue = (value) => {
 
 const showResult = (list) => {
   let showList = [];
+  let resultTag = document.getElementsByTagName("h2")[0];
+  let resultText = document.getElementById("result");
+  let saveBtn = document.getElementById("save-button");
   resultTag.hidden = false;
   resultText.hidden = false;
   saveBtn.hidden = false;
@@ -115,6 +102,7 @@ const disable = (element) => {
 }
 
 const caluculate = () => {
+  let inputEv = document.getElementById("Ev-Value");
   // どの値を参照するか
   let evValueList = isInfected === true? evPokerusList : evDefaultList;
   let times = 0;
@@ -135,6 +123,7 @@ const caluculate = () => {
   while (appointedEvValue != 0 && appointedEvValue != false) {
     // 指定努力値が252、もしくはCounterStopを選んだ状態
     if (isCounterStop) {
+      let inputCalc = document.getElementById("caluculate");
       result =  252 / canGetEv;
       if (hasEvItem && isCallFellow) {
         resultsList.splice(0,1,resultsList[0] + `${result}回`);
@@ -195,6 +184,7 @@ const caluculate = () => {
 
   // 計算終了時
   if (appointedEvValue === 0) {
+    let inputCalc = document.getElementById("caluculate");
     resultsList.splice(3,1,resultsList[3] + `${times}回`);
     isAddedList[3] = true;
     showResult(resultsList);

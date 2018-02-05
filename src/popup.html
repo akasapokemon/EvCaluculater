@@ -5,7 +5,7 @@
   <title>PokemonEvCaluculater</title>
   <script src="save.js"></script>
   <script src="caluculate.js"></script>
-  <script src="hoge.js"></script>
+  <script src="list.js"></script>
 </head>
 <body>
   <p>Pokerus <input type="checkbox" id="pokerus"></p>
@@ -14,18 +14,15 @@
   <p>Counter stop <input type="checkbox" id="counter-stop" onclick="syncBtn(this.checked);"></p>
   <p>Ev-Value <input type="number" id="Ev-Value"></p>
   <p>Caluculate <button type="button" id="caluculate" onclick="caluculate();"></button></p>
-  <p>hoge <button type="button" id="hoge" onclick="hoge();"></button></p>
 
  <h2 hidden>Result</h2>
   <p><div id="result" hidden></div></p>
     <button type="button" id="save-button" onclick="save();" hidden>
       <font size="1">save</font>
     </button>
+    <button type="button" onclick="fetchAll();"></button>
  <h2>List</h2>
-  <ol>
-    <li>
-
-    </li>
+  <ol id="items">
   </ol>
 </body>
 </html>

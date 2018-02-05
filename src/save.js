@@ -1,6 +1,6 @@
-let indexNumber = 0;
+let index = 0;
 const save = () => {
   let resultText = document.getElementById("result").innerHTML;
   localStorage.setItem(indexNumber,resultText);
-  indexNumber++;
+  index++;
 }
