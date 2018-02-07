@@ -16,8 +16,8 @@ let appointedEvValue = 0;
 let isCounterStop = false;
 let evPokerusList = [36,18,4,2];
 let evDefaultList = [18,9,2,1];
-let resultsList= ['パワー系＆仲間呼び ','パワー系＆仲間呼び無し ',
-                    'パワー系無し＆仲間呼び ','パワー系無し＆仲間呼び無し '];
+let resultsList= ['パワー系＆仲間呼び: ','パワー系＆仲間呼び無し: ',
+                    'パワー系無し＆仲間呼び: ','パワー系無し＆仲間呼び無し: '];
 let isAddedList = [false,false,false,false];
 
 //------- Functions which are made for onclick Event. ----------
@@ -94,7 +94,7 @@ const showResult = (list) => {
       showList.push(result);
     }
   }
-  resultText.innerHTML = showList;
+  resultText.textContent = showList;
 }
 
 const disable = (element) => {
