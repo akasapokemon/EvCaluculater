@@ -32,10 +32,19 @@ const save = (element) => {
   title.hidden = false;
   li.removeChild(input);
   // 二回以上のクリックを防ぐ
-  // element.disabled = true;
   element.disabled = true;
   editBtn.disabled = false;
 }
 
-const remove = () => {
+const remove = (element) => {
+  let id = element.id.replace(/remove-button/g,"");
+  let li = document.getElementById(id);
+  console.log(li);
+  let isRemove = confirm("本当に削除しますか？");
+  if (isRemove) {
+    localStorage.removeItem(id);
+    li.parentNode.removeChild(li);
+  } else {
+    return;
+  }
 }

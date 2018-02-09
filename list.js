@@ -35,9 +35,9 @@ const createList = () => {
       items.appendChild(li);
       li.appendChild(title);
       li.appendChild(item);
-      items.appendChild(editBtn);
-      items.appendChild(saveBtn);
-      items.appendChild(removeBtn);
+      li.appendChild(editBtn);
+      li.appendChild(saveBtn);
+      li.appendChild(removeBtn);
     }
   }
 }
