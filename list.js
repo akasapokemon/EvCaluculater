@@ -3,8 +3,8 @@ const createList = () => {
   if (localStorage.length != 0) {
     for (let index = 0; index < localStorage.length; index++) {
       // Element作成
-      let li = document.createElement("li");
-      li.setAttribute("id",index);
+      let div = document.createElement("div");
+      div.setAttribute("id",index);
 
       let title = document.createElement("p");
       title.textContent = JSON.parse(localStorage.getItem(index)).title;
@@ -32,12 +32,12 @@ const createList = () => {
       removeBtn.textContent = "remove";
 
       // 各要素をitems(ol)の子要素として追加
-      items.appendChild(li);
-      li.appendChild(title);
-      li.appendChild(item);
-      li.appendChild(editBtn);
-      li.appendChild(saveBtn);
-      li.appendChild(removeBtn);
+      items.appendChild(div);
+      div.appendChild(title);
+      div.appendChild(item);
+      div.appendChild(editBtn);
+      div.appendChild(saveBtn);
+      div.appendChild(removeBtn);
     }
   }
 }
