@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PokemonEvCaluculater</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="caluculate.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="caluculate.js"></script>
+  <script src="list.js"></script>
+  <script src="button.js"></script>
+</head>
+
+<body>
+  <div class="p-3">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="#tab1" class="nav-link" data-toggle="tab">Caluculate</a>
+      </li>
+      <li class="nav-item">
+        <a href="#tab2" class="nav-link" data-toggle="tab">List</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- コンテンツ部分 -->
+      <div id="tab1" class="tab-pane active">
+        <h2>Caluculate</h2>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">Pokemon
+            <input type="text" id="title" class="form-control" maxlength="10" placeholder="ポケモン名を入力して下さい">
+          </p>
+        </div>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">Status
+            <select class="form-control" id="test">
+              <option>HP</option>
+              <option>こうげき</option>
+              <option>ぼうぎょ</option>
+              <option>とくこう</option>
+              <option>とくぼう</option>
+              <option>すばやさ</option>
+            </select>
+          </p>
+        </div>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">Pokerus
+            <input type="checkbox" id="pokerus">
+          </p>
+        </div>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">Call fellow
+            <input type="checkbox" id="call-fellow">
+          </p>
+        </div>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">EV-item
+            <input type="checkbox" id="Ev-Item">
+          </p>
+        </div>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">Counter stop
+            <input type="checkbox" id="counter-stop" onclick="syncBtn(this.checked);">
+          </p>
+        </div>
+        <div class="row">
+          <img class="img-responsive mt-3 ml-3" src="../images/モンスターボール.png" width="40" height="40">
+          <p class="col-sm-3">Ev-Value
+            <input type="number" id="Ev-Value" class="form-control" maxlength="3" placeholder="努力値を入力して下さい">
+          </p>
+        </div>
+
+        <p>Caluculate
+          <button type="button" id="caluculate" onclick="caluculate();"></button>
+        </p>
+
+        <h2 hidden>Result</h2>
+        <p>
+          <div id="result" hidden></div>
+        </p>
+        <button type="button" id="save-button" onclick="add();" hidden>
+          <font size="1">add</font>
+        </button>
+      </div>
+
+      <div id="tab2" class="tab-pane">
+        <h2>List</h2>
+        <div id="items">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
